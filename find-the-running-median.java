@@ -8,17 +8,10 @@ import java.util.regex.*;
 //url:https://www.hackerrank.com/challenges/find-the-running-median/problem
 //input
 /*
-10
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+*/
+//desc
+/*
+get median from stream
 */
 public class Solution {
 
@@ -40,6 +33,7 @@ public class Solution {
 
         double[] res = new double[a.length];
  
+        //sorted queue (reverse)
         PriorityQueue<Integer> left=new PriorityQueue<>(Collections.reverseOrder());
         PriorityQueue<Integer> right=new PriorityQueue<>();
  
@@ -55,7 +49,7 @@ public class Solution {
         }
 
         res[0] =a[0];
-        res[1] =((double)a[0]+(double)a[1])/2.0;
+        res[1] =(a[0]+a[1])/2.0;
 
         for(int i=2;i<a.length;++i){
 
@@ -78,7 +72,7 @@ left.add(right.poll());
 
 //calc
         if(left.size() == right.size())
-            res[i] = ((double)left.peek()+(double)right.peek())/2.0;
+            res[i] = (left.peek()+right.peek())/2.0;
         if(left.size() > right.size())
             res[i] =  left.peek() ;
             else
