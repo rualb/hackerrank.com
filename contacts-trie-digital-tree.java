@@ -6,6 +6,14 @@ import java.util.regex.*;
 
 
 //url:https://www.hackerrank.com/challenges/contacts/problem
+//input:
+/*
+4
+add hack
+add hackerrank
+find hac
+find hak
+*/
 public class Solution {
 
 
@@ -43,7 +51,7 @@ public class Solution {
                     tmp = x;
                     }
 
-            return tmp.count;
+                    return tmp.count;
                 }
 
     }
